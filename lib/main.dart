@@ -201,7 +201,7 @@ class HomePage extends StatelessWidget {
                                       )),
                                     ])),
                                     SizedBox(height: 3, child: Container(decoration: BoxDecoration(color: Colors.white),),),
-                                    SizedBox(height: 3, child: Container(decoration: BoxDecoration(color: Colors.grey[300]),),),
+                                    SizedBox(height: 5, child: Container(decoration: BoxDecoration(color: Colors.grey[300]),),),
                             Expanded(
                               flex: 2,
                               child: TabBarView(
