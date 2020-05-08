@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './tabs.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -22,6 +24,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(
@@ -122,108 +125,107 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Center(
-                    child: Container(
-                      color: Colors.blue,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border: Border(top: BorderSide(color: Colors.white))
-                        ),
-
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Center(
+                            child: Container(
+                            color: Colors.white,
+                            child: Container(
+                  
                         constraints: BoxConstraints(
-                          maxHeight: MediaQuery.of(context).size.height,
-                          minHeight: 200,
-                          maxWidth: 460,
-                          minWidth: 460,
+                          maxHeight: 400,
+                          minHeight: 400,
+                          maxWidth: MediaQuery.of(context).size.width,
+                          minWidth: 360,
                         ),
                         child: Column(
                           children: <Widget>[
                             DefaultTabController(
-                              length: 5,
-                              initialIndex: 0,
-                              child: Expanded(
-                                child: Column(
-                                  children: <Widget>[
-                                    Material(
-                                      //color: Colors.white,
-                                      child: TabBar(
-                                        labelColor: Colors.amber,
-                                        isScrollable: true,
-                                        //indicatorColor: Colors.red,
-                                        unselectedLabelColor: Colors.black,
-                                        indicator: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(50),
-                                          color: Colors.red,
-                                          
+                            length: 5,
+                            initialIndex: 0,
+                            child: Expanded(
+                            child: Column(
+                                children: [
+                                Material(
+                                  color: Colors.transparent,
+                                  child: TabBar(
+                                    indicator: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: Colors.blueAccent,
+                                    ),
+                                    //indicatorColor:Colors.red,
+                                    labelColor: Colors.white,
+                                    isScrollable: true,
+                                    unselectedLabelColor:
+                                        Colors.black,
+                                    tabs: [
+                                      Tab(
+                                          child: Text(
+                                        'Feature Arts',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15
                                         ),
-                                        tabs: <Widget>[
-                                          Tab(
-                                            child: Text(
-                                              'Featured art',
-                                              style: TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w300,
-                                              )
-                                            ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              'Craft',
-                                              style: TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w300,
-                                              )
-                                            ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              'Fine Art',
-                                              style: TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w300,
-                                              )
-                                            ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              'Photography',
-                                              style: TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w300,
-                                              )
-                                            ),
-                                          ),
-                                          Tab(
-                                            child: Text(
-                                              'Photography',
-                                              style: TextStyle(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 15,
-                                                fontWeight: FontWeight.w300,
-                                              )
-                                            ),
-                                          ),
-                                          
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              )
+                                      )),
+                                      Tab(
+                                          child: Text(
+                                        'Craft',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15
+                                        ),
+                                      )),
+                                      Tab(
+                                          child: Text(
+                                        'Fine Art',
+                                        style: TextStyle( 
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15
+                                     ),
+                                      )),
+                                      Tab(
+                                          child: Text(
+                                        'Photography',
+                                        style: TextStyle( 
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15
+                                     ),
+                                      )),
+                                      Tab(
+                                          child: Text(
+                                        'Home Painting',
+                                        style: TextStyle( 
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 15
+                                     ),
+                                      )),
+                                    ])),
+                                    SizedBox(height: 3, child: Container(decoration: BoxDecoration(color: Colors.white),),),
+                                    SizedBox(height: 3, child: Container(decoration: BoxDecoration(color: Colors.grey[300]),),),
+                            Expanded(
+                              flex: 2,
+                              child: TabBarView(
+                                children: [
+                                  Tabs(),
+                                  Tabs(),
+                                  Tabs(),
+                                  Tabs(),
+                                  Tabs(),
+                                  
+                              ],
+                            ),
+                           )
+                         ],
+                       ),
+                      )
+                     ),
+                    ],
+                  ),
+                 ),
+                ), 
+               )
+              ],
+             ),
               
             ],
           ),
